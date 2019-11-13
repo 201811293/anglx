@@ -1,13 +1,36 @@
-<p>cliente-index works!</p>
+<h1>Nueva Persona </h1>
 <nav>
-  <a routerLink="/clienteform" routerLinkActive="active">New Cliente</a> <br>
-
+    <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/clienteform">Nueva Persona</button>
+  <br>
 </nav>
-<div *ngFor="let d of list">
-    <span>{{ d.nombre }}</span>
-    <span>{{ d.apellido }}</span>
-    <span><a routerLink="/clienteform/{{ d.id }}" routerLinkActive="active">Edit</a></span>
-    <span><button (click)="delete(d.id)">Delete</button></span>
-
-  </div>
-  
+    <table class="table" >
+        <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Celular</th>
+              <th scope="col">Dirección</th>
+              <th scope="col">Sexo</th>
+              <th scope="col">Trabajo</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              
+            </tr>
+          </thead>
+      <tbody class="thead-dark" *ngFor="let d of list; index as i">
+        
+        <tr>
+          <th scope="col">{{ i+1}}</th>
+          <th scope="col">{{ d.nombre }}</th>
+          <th scope="col">{{ d.apellido }}</th>
+          <th scope="col">{{ d.telefono }}</th>
+          <th scope="col">{{ d.direccion }}</th>  
+          <th scope="col">{{ d.sexo }}</th>
+          <th scope="col"><a routerLink="/trabajoform/:id" routerLinkActive="active">Trabajo</a></th>
+          <th scope="col"><a routerLink="/clienteform/{{ d.id }}" routerLinkActive="active">Edit</a></th>
+          <th><button (click)="delete(d.id)">Delete</button></th>
+        </tr>
+        
+      </tbody>
+    </table>
