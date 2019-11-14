@@ -20,20 +20,12 @@ export class ClienteFormComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.clienteForm = this.formBuild.group({
-      id: ['', [Validators.required]],
+      id: ['' ],
       nombre: ['', [Validators.required]],
-      apellido_mat: ['', [Validators.required]],
-      apellido_pat: ['', [Validators.required]],
-      di: ['', [Validators.required]],
-      usuario: ['', [Validators.required]],
-      contraseña: ['', [Validators.required]],
-      sexo: ['', [Validators.required]],
-      correo: ['', [Validators.required]],
+      apellido: ['', [Validators.required]],
+      telefono: ['', [Validators.required]],
       direccion: ['', [Validators.required]],
-      estado_civil: ['', [Validators.required]],
-      celular_referencia: ['', [Validators.required]],
-      fecha_de_nacimiento: ['', [Validators.required]],
-      rol_id:['', [Validators.required]],
+      sexo:['', [Validators.required]],
       
     });
     const id = this.route.snapshot.paramMap.get('id');
