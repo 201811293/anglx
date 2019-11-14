@@ -1,12 +1,12 @@
 <div class="container">
-    <h1>Angular Router</h1>
-    <nav>
-      <a routerLink="/clienteindex" routerLinkActive="active">CRUD Clientes</a> <br>
-      <a routerLink="/products" routerLinkActive="active">Lista productos</a> <br>
-      <a routerLink="/heroes" routerLinkActive="">Heroes</a>
-      <a routerLink="/cart" routerLinkActive="">cart</a>
-
-    </nav>
-
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="navbar navbar-dark bg-dark" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#" > Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link"  routerLink="/clienteindex">Listado Personas</a>
+        <a class="nav-item nav-link" routerLink="/trabajoform/:id">Listado Trabajo</a>
+      </div>
+    </div>
+  </nav>    
   <router-outlet></router-outlet>
 </div>
